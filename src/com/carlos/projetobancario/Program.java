@@ -1,5 +1,4 @@
 package com.carlos.projetobancario;
-import java.util.Scanner;
 
 public class Program {
 	

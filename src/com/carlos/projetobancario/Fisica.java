@@ -5,9 +5,7 @@ public class Fisica extends Pessoa {
 	
 	private String dataDeNascimento;
 	
-	public Fisica() {
-		this.dataDeNascimento = dataDeNascimento;
-	}
+	public Fisica() {}
 	
 	public String getDataDeNascimento() {
 		return dataDeNascimento;
@@ -18,11 +16,18 @@ public class Fisica extends Pessoa {
 	}
 	
 	@Override
-	public void cadastrarPessoa() {
+	public boolean cadastrarPessoa() {
 		super.cadastrarPessoa();
 		System.out.println("Digite a data de nascimento do titular: ");
-		Scanner scan = new Scanner(System.in);
+		
+		try (Scanner scan = new Scanner(System.in)){
 		this.dataDeNascimento = scan.nextLine();
+		
+		return true;
+		
+		}catch(Exception e) {
+			return false;
+		}
 	}
 	
 	@Override

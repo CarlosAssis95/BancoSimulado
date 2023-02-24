@@ -1,6 +1,5 @@
 package com.carlos.projetobancario;
 import java.util.Scanner;
-import java.util.Date;
 
 public class Pessoa {
 	
@@ -8,17 +7,13 @@ public class Pessoa {
 	private String nome;
 	private String documentoDeIdentificacao;
 	
-	public Pessoa() {
-		this.endereco = endereco;
-		this.nome = nome;
-		this.documentoDeIdentificacao = documentoDeIdentificacao;
-	}
+	public Pessoa() {}
 	
 	public String getEndereco(){
 		return endereco;
 	}
 	
-	public void setEndereco() {
+	public void setEndereco(String endereco) {
 		this.endereco = endereco;
 	}
 	
@@ -26,7 +21,7 @@ public class Pessoa {
 		return nome;
 	}
 	
-	public void setNome() {
+	public void setNome(String nome) {
 		this.nome = nome;
 	}
 	
@@ -34,23 +29,27 @@ public class Pessoa {
 		return documentoDeIdentificacao;
 	}
 	
-	public void setDocumentoDeIdentificacao() {
+	public void setDocumentoDeIdentificacao(String documentoDeIdentificacao) {
 		this.documentoDeIdentificacao = documentoDeIdentificacao;
 	}
 	
-	public void cadastrarPessoa() {
+	public boolean cadastrarPessoa() {
 		System.out.println("Digite os dados solicitados?");
-		Scanner scan = new Scanner(System.in);
-		
-		System.out.println("Digite o nome do titular: ");
-		this.nome = scan.nextLine();
-		
-		System.out.println("Digite o endereco do titular: ");
-		this.endereco = scan.nextLine();
-		
-		System.out.println("Digite o Documento de Identificacao: ");
-		this.documentoDeIdentificacao = scan.nextLine();
-		
+		try (Scanner scan = new Scanner(System.in)) {
+			System.out.println("Digite o nome do titular: ");
+			this.nome = scan.nextLine();
+			
+			System.out.println("Digite o endereco do titular: ");
+			this.endereco = scan.nextLine();
+			
+			System.out.println("Digite o Documento de Identificacao: ");
+			this.documentoDeIdentificacao = scan.nextLine();
+			
+			return true;
+			
+		}catch(Exception e) {
+			return false;
+		}
 	}
 	public void mostrarPessoa() {
 		System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");

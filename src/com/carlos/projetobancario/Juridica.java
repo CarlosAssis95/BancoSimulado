@@ -6,10 +6,7 @@ public class Juridica extends Pessoa {
 	private String dataDeAbertura;
 
 	
-	public Juridica() {
-		
-		this.dataDeAbertura = dataDeAbertura;
-	}
+	public Juridica() {}
 	
 	public String getDataDeAbertura() {
 		return dataDeAbertura;
@@ -20,11 +17,16 @@ public class Juridica extends Pessoa {
 	}
 	
 	@Override
-	public void cadastrarPessoa() {
+	public boolean cadastrarPessoa () {
 		super.cadastrarPessoa();
 		System.out.println("Digite a data de abertura da empresa titular: ");
-		Scanner scan = new Scanner(System.in);
+		try (Scanner scan = new Scanner(System.in)){
 		this.dataDeAbertura = scan.nextLine();
+		
+		return true;
+		}catch(Exception e) {
+			return false;
+		}
 	}
 	
 	@Override
@@ -33,5 +35,5 @@ public class Juridica extends Pessoa {
 		System.out.println("A data de abertura é " + this.dataDeAbertura );
 		System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
 	}
-	
 }
+
