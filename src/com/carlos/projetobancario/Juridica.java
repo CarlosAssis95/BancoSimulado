@@ -18,12 +18,16 @@ public class Juridica extends Pessoa {
 	
 	@Override
 	public boolean cadastrarPessoa () {
-		super.cadastrarPessoa();
+		
+		System.out.println("Digite os dados solicitados");
 		System.out.println("Digite a data de abertura da empresa titular: ");
+		
 		try (Scanner scan = new Scanner(System.in)){
 		this.dataDeAbertura = scan.nextLine();
+		super.cadastrarPessoa();
 		
 		return true;
+		
 		}catch(Exception e) {
 			return false;
 		}

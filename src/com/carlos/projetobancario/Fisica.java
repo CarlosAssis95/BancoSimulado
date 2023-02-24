@@ -17,17 +17,18 @@ public class Fisica extends Pessoa {
 	
 	@Override
 	public boolean cadastrarPessoa() {
-		super.cadastrarPessoa();
+		
+		System.out.println("Digite os dados solicitados");
 		System.out.println("Digite a data de nascimento do titular: ");
 		
 		try (Scanner scan = new Scanner(System.in)){
 		this.dataDeNascimento = scan.nextLine();
-		
-		return true;
+		super.cadastrarPessoa();
 		
 		}catch(Exception e) {
 			return false;
 		}
+		return true;
 	}
 	
 	@Override

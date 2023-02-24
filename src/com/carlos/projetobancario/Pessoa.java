@@ -34,7 +34,7 @@ public class Pessoa {
 	}
 	
 	public boolean cadastrarPessoa() {
-		System.out.println("Digite os dados solicitados?");
+		
 		try (Scanner scan = new Scanner(System.in)) {
 			System.out.println("Digite o nome do titular: ");
 			this.nome = scan.nextLine();
@@ -45,12 +45,13 @@ public class Pessoa {
 			System.out.println("Digite o Documento de Identificacao: ");
 			this.documentoDeIdentificacao = scan.nextLine();
 			
-			return true;
 			
 		}catch(Exception e) {
 			return false;
 		}
+		return true;
 	}
+	
 	public void mostrarPessoa() {
 		System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
 		System.out.println("A Pessoa cadastrada é " + this.nome);
