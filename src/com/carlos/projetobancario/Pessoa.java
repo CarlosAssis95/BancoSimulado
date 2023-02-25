@@ -1,5 +1,4 @@
 package com.carlos.projetobancario;
-import java.util.Scanner;
 
 public class Pessoa {
 	
@@ -8,6 +7,13 @@ public class Pessoa {
 	private String documentoDeIdentificacao;
 	
 	public Pessoa() {}
+	
+	public Pessoa(String endereco, String nome, String documentoDeIdentificacao) {
+		super();
+		this.endereco = endereco;
+		this.nome = nome;
+		this.documentoDeIdentificacao = documentoDeIdentificacao;
+	}
 	
 	public String getEndereco(){
 		return endereco;
@@ -31,25 +37,6 @@ public class Pessoa {
 	
 	public void setDocumentoDeIdentificacao(String documentoDeIdentificacao) {
 		this.documentoDeIdentificacao = documentoDeIdentificacao;
-	}
-	
-	public boolean cadastrarPessoa() {
-		
-		try (Scanner scan = new Scanner(System.in)) {
-			System.out.println("Digite o nome do titular: ");
-			this.nome = scan.nextLine();
-			
-			System.out.println("Digite o endereco do titular: ");
-			this.endereco = scan.nextLine();
-			
-			System.out.println("Digite o Documento de Identificacao: ");
-			this.documentoDeIdentificacao = scan.nextLine();
-			
-			
-		}catch(Exception e) {
-			return false;
-		}
-		return true;
 	}
 	
 	public void mostrarPessoa() {

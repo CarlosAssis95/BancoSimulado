@@ -1,5 +1,4 @@
 package com.carlos.projetobancario;
-import java.util.Scanner;
 
 public class Juridica extends Pessoa {
 	
@@ -8,29 +7,17 @@ public class Juridica extends Pessoa {
 	
 	public Juridica() {}
 	
+	public Juridica(String dataDeAbertura, String endereco, String nome, String documentoDeIdentificacao) {
+		super(endereco, nome, documentoDeIdentificacao);
+		this.dataDeAbertura = dataDeAbertura;
+	}
+	
 	public String getDataDeAbertura() {
 		return dataDeAbertura;
 	}
 	
 	public void setDataDeAbertura(String dataDeAbertura) {
 		this.dataDeAbertura = dataDeAbertura;
-	}
-	
-	@Override
-	public boolean cadastrarPessoa () {
-		
-		System.out.println("Digite os dados solicitados");
-		System.out.println("Digite a data de abertura da empresa titular: ");
-		
-		try (Scanner scan = new Scanner(System.in)){
-		this.dataDeAbertura = scan.nextLine();
-		super.cadastrarPessoa();
-		
-		return true;
-		
-		}catch(Exception e) {
-			return false;
-		}
 	}
 	
 	@Override
