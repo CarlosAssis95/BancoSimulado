@@ -1,6 +1,4 @@
 package com.carlos.projetobancario;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Menu {
@@ -15,15 +13,17 @@ public class Menu {
 		    
 			System.out.println("[1]CADASTRAR PESSOA \n[2]LISTAR PESSOA \n[3]EFETUAR DEPOSITO \n[4]EXIT");
 		    int option = scan.nextInt();
+		    
+		    Pessoa pessoa = new Pessoa();
 		     
 		    switch(option) {
 	        
 			    case 1:
-		            cadastrarPessoa();
+		            pessoa.cadastrarPessoa();
 		            break;
 	
 		        case 2:
-		        	listarPessoa();
+		        	pessoa.listarPessoa();
 		            break;
 		            
 		        case 3:
@@ -42,19 +42,6 @@ public class Menu {
 		        		
 		    }
 		}
-	}
-	
-	List<Fisica> listaPessoaFisica = new ArrayList<>();
-	List<Juridica> listaPessoaJuridica = new ArrayList<>();
-	
-	public void cadastrarPessoa() {
-		listaPessoaFisica.add(PersonReader.criarPessoaFisica());
-		listaPessoaJuridica.add(PersonReader.criarPessoaJuridica());
-	}
-	
-	public void listarPessoa() {
-		System.out.println(listaPessoaFisica.toString());
-		System.out.println(listaPessoaJuridica.toString());
 	}
 	
 	Operacoes operacoes = new Operacoes();

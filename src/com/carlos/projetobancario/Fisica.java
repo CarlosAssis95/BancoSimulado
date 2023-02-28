@@ -6,8 +6,8 @@ public class Fisica extends Pessoa {
 	
 	public Fisica() {}
 	
-	public Fisica(String dataDeNascimento, String nome, String endereco, String documentoDeIdentificacao) {
-		super(nome, endereco, documentoDeIdentificacao);
+	public Fisica(String nome, String documentoDeIdentificacao, String dataDeNascimento, String endereco) {
+		super(nome, documentoDeIdentificacao, endereco);
 		this.dataDeNascimento = dataDeNascimento;
 	}
 	
@@ -25,5 +25,4 @@ public class Fisica extends Pessoa {
 		return "Nome: " + getNome() + "\nEndereco: " + getEndereco() + "\nDocumento de Identificacao: " + getDocumentoDeIdentificacao() + "\nData de nascimento: " + getDataDeNascimento();
 		
 	}
-	
 }
