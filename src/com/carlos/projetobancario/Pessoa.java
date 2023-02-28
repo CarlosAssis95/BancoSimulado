@@ -45,7 +45,7 @@ public class Pessoa {
 	
 	List<Fisica> listaPessoaFisica = new ArrayList<>();
 	List<Juridica> listaPessoaJuridica = new ArrayList<>();
-	Scanner scan;
+	Scanner scan = new Scanner(System.in);
 	
 	public void cadastrarPessoa() {
 		
