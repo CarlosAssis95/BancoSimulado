@@ -1,5 +1,4 @@
 package com.carlos.projetobancario;
-import java.util.Scanner;
 
 public class Operacoes extends Conta {
 	
@@ -9,6 +8,10 @@ public class Operacoes extends Conta {
 	
 
 	public Operacoes() {}
+	
+	public Operacoes(double deposito) {
+		this.deposito = deposito;
+	}
 	
 	public double getDeposito() {
 		return deposito;
@@ -34,20 +37,5 @@ public class Operacoes extends Conta {
 		this.saldo = saldo;
 	}
 	
-	public boolean efetuarDeposito() {
-		System.out.println("Qual valor gostaria de depositar? ");
-		
-		try (Scanner scan = new Scanner(System.in)){
-			
-			deposito = scan.nextDouble();
-			System.out.println("O valor depositado foi de R$ " + deposito + " Reais");
-			
-			return true;
-			
-		}catch (Exception e) {
-			
-			return false;
-		}
-	}
 	
 }

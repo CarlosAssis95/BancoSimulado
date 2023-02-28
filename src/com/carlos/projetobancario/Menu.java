@@ -27,7 +27,7 @@ public class Menu {
 		            break;
 		            
 		        case 3:
-		        	efetuarDeposito();
+		        	OperationsReader.efetuarDeposito();
 		        	break;	
 		        	
 		        case 4:
@@ -44,9 +44,4 @@ public class Menu {
 		}
 	}
 	
-	Operacoes operacoes = new Operacoes();
-	
-	public void efetuarDeposito() {
-		operacoes.efetuarDeposito();
-	}
 }
