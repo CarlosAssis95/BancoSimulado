@@ -4,11 +4,10 @@ public class Juridica extends Pessoa {
 	
 	private String dataDeAbertura;
 
-	
 	public Juridica() {}
 	
 	public Juridica(String dataDeAbertura, String endereco, String nome, String documentoDeIdentificacao) {
-		super(endereco, nome, documentoDeIdentificacao);
+		super(nome, endereco, documentoDeIdentificacao);
 		this.dataDeAbertura = dataDeAbertura;
 	}
 	
@@ -21,10 +20,10 @@ public class Juridica extends Pessoa {
 	}
 	
 	@Override
-	public void mostrarPessoa() {
-		super.mostrarPessoa();
-		System.out.println("A data de abertura é " + this.dataDeAbertura );
-		System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+	public String toString() {
+		
+		return "Nome: " + getNome() + "\nEndereco: " + getEndereco() + "\nDocumento de Identificacao: " + getDocumentoDeIdentificacao() + "\nData de abertura: " + getDataDeAbertura();
+		
 	}
 }
 

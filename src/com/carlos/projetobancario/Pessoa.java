@@ -31,18 +31,11 @@ public class Pessoa {
 		this.nome = nome;
 	}
 	
-	public String getdocumentoDeIdentificacao() {
+	public String getDocumentoDeIdentificacao() {
 		return documentoDeIdentificacao;
 	}
 	
 	public void setDocumentoDeIdentificacao(String documentoDeIdentificacao) {
 		this.documentoDeIdentificacao = documentoDeIdentificacao;
-	}
-	
-	public void mostrarPessoa() {
-		System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
-		System.out.println("A Pessoa cadastrada é " + this.nome);
-		System.out.println("A endereco cadastrado é " + this.endereco);
-		System.out.println("O documento cadastrado é "+ this.documentoDeIdentificacao);
 	}
 }

@@ -7,7 +7,7 @@ public class Fisica extends Pessoa {
 	public Fisica() {}
 	
 	public Fisica(String dataDeNascimento, String nome, String endereco, String documentoDeIdentificacao) {
-		super(endereco, nome, documentoDeIdentificacao);
+		super(nome, endereco, documentoDeIdentificacao);
 		this.dataDeNascimento = dataDeNascimento;
 	}
 	
@@ -20,10 +20,10 @@ public class Fisica extends Pessoa {
 	}
 	
 	@Override
-	public void mostrarPessoa() {
-		super.mostrarPessoa();
-		System.out.println("A data de nascimento é " + this.dataDeNascimento );
-		System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+	public String toString() {
+		
+		return "Nome: " + getNome() + "\nEndereco: " + getEndereco() + "\nDocumento de Identificacao: " + getDocumentoDeIdentificacao() + "\nData de nascimento: " + getDataDeNascimento();
+		
 	}
 	
 }
