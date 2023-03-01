@@ -4,7 +4,7 @@ public class Program {
 
     public static void main(String[] args) {
     	
-    	private Menu menu final;
+    	Menu menu = new Menu();
         
     	menu.executarMenu();
 
