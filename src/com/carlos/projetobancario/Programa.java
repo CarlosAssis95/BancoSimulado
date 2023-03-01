@@ -1,6 +1,6 @@
 package com.carlos.projetobancario;
 
-public class Program {	
+public class Programa {	
 
     public static void main(String[] args) {
     	

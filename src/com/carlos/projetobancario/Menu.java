@@ -30,7 +30,7 @@ public class Menu {
 		            break;
 		            
 		        case 3:
-		        	OperationsReader.efetuarDeposito();
+		        	LeitorDeDados.efetuarDeposito();
 		        	break;	
 		        	
 		        case 4:
@@ -53,10 +53,10 @@ public class Menu {
 		int tipoPessoa = scan.nextInt();
 		
 		if (tipoPessoa == 1) {
-		listaPessoaFisica.add(PersonReader.criarPessoaFisica());
+		listaPessoaFisica.add(LeitorDeDados.criarPessoaFisica());
 		}
 		else {
-		listaPessoaJuridica.add(PersonReader.criarPessoaJuridica());
+		listaPessoaJuridica.add(LeitorDeDados.criarPessoaJuridica());
 		}
 	}
 	

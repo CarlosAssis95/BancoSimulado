@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author Carlo
- *
- */
-module Banco {
-}

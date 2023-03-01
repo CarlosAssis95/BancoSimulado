@@ -1,7 +1,7 @@
 package com.carlos.projetobancario;
 import java.util.Scanner;
 
-public class PersonReader {
+public class LeitorDeDados {
 	
 	private final static Scanner scan = new Scanner(System.in);
 	
@@ -38,4 +38,17 @@ public class PersonReader {
 		
 		return new Fisica(nome, documentoDeIdentificacao, dataDeNascimento, endereco);
 	}
+	
+	private final static Scanner scanDouble = new Scanner(System.in);
+	
+	public static Operacoes efetuarDeposito() {
+		
+		System.out.println("Qual valor gostaria de depositar? ");
+		double deposito = scanDouble.nextDouble();
+		
+		System.out.println("O valor depositado foi de R$ " + deposito + " Reais");
+		
+		return new Operacoes(deposito);
+	}
+	
 }

@@ -7,8 +7,8 @@ public class Juridica extends Pessoa {
 
 	public Juridica() {}
 	
-	public Juridica(String dataDeAbertura, String endereco, String nome, String documentoDeIdentificacao) {
-		super(nome, endereco, documentoDeIdentificacao);
+	public Juridica(String nome, String documentoDeIdentificacao, String dataDeAbertura, String endereco) {
+		super(nome, documentoDeIdentificacao, endereco);
 		this.dataDeAbertura = dataDeAbertura;
 	}
 	

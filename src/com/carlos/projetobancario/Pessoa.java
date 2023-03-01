@@ -9,7 +9,7 @@ public class Pessoa {
 	
 	public Pessoa() {}
 	
-	public Pessoa(String endereco, String nome, String documentoDeIdentificacao) {
+	public Pessoa(String nome, String documentoDeIdentificacao, String endereco) {
 		super();
 		this.endereco = endereco;
 		this.nome = nome;
