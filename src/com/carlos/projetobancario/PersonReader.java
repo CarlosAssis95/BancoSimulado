@@ -38,5 +38,4 @@ public class PersonReader {
 		
 		return new Fisica(nome, documentoDeIdentificacao, dataDeNascimento, endereco);
 	}
-
 }

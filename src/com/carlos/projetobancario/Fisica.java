@@ -1,5 +1,6 @@
 package com.carlos.projetobancario;
 
+
 public class Fisica extends Pessoa {
 	
 	private String dataDeNascimento;
@@ -25,4 +26,5 @@ public class Fisica extends Pessoa {
 		return "Nome: " + getNome() + "\nEndereco: " + getEndereco() + "\nDocumento de Identificacao: " + getDocumentoDeIdentificacao() + "\nData de nascimento: " + getDataDeNascimento();
 		
 	}
+	
 }

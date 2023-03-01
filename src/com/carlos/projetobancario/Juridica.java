@@ -1,5 +1,6 @@
 package com.carlos.projetobancario;
 
+
 public class Juridica extends Pessoa {
 	
 	private String dataDeAbertura;
