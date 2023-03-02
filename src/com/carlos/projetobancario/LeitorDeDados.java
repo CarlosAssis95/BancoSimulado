@@ -8,16 +8,16 @@ public class LeitorDeDados {
 	public static Juridica criarPessoaJuridica() {
 		
 		System.out.println("Digite o nome do titular: ");
-		String nome = scan.next();
+		String nome = scan.nextLine();
 		
 		System.out.println("Digite o numero do CNPJ: ");
-		String documentoDeIdentificacao = scan.next();
+		String documentoDeIdentificacao = scan.nextLine();
 		
 		System.out.println("Digite a data de abertura da empresa: ");
-		String dataDeAbertura = scan.next();
+		String dataDeAbertura = scan.nextLine();
 		
 		System.out.println("Digite o endereço: ");
-		String endereco = scan.next();
+		String endereco = scan.nextLine();
 		
 		return new Juridica(nome ,documentoDeIdentificacao, dataDeAbertura, endereco);
 	}
@@ -25,16 +25,16 @@ public class LeitorDeDados {
 	public static Fisica criarPessoaFisica() {
 		
 		System.out.println("Digite o nome do titular: ");
-		String nome = scan.next();
+		String nome = scan.nextLine();
 		
 		System.out.println("Digite o numero do CPF: ");
-		String documentoDeIdentificacao = scan.next();
+		String documentoDeIdentificacao = scan.nextLine();
 		
 		System.out.println("Digite a data de nascimento: ");
-		String dataDeNascimento = scan.next();
+		String dataDeNascimento = scan.nextLine();
 			
 		System.out.println("Digite o endereço: ");
-		String endereco = scan.next();
+		String endereco = scan.nextLine();
 		
 		return new Fisica(nome, documentoDeIdentificacao, dataDeNascimento, endereco);
 	}

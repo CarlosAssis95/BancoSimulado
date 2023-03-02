@@ -12,7 +12,7 @@ public class Menu {
 	
 	static boolean exibirMenu = true;
 	
-	public static String executarMenu() {
+	public static void executarMenu() {
 		
 		while(exibirMenu) {
 		    
@@ -46,7 +46,6 @@ public class Menu {
 		        		
 		    }
 		}
-		return null;
 	}
 	
 	public static void cadastrarPessoa() {
