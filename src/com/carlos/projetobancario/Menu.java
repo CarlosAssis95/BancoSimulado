@@ -7,12 +7,12 @@ public class Menu {
 	
 	private final static Scanner scan = new Scanner(System.in);
 	
-	List<Fisica> listaPessoaFisica = new ArrayList<>();
-	List<Juridica> listaPessoaJuridica = new ArrayList<>();
+	static List<Fisica> listaPessoaFisica = new ArrayList<>();
+	static List<Juridica> listaPessoaJuridica = new ArrayList<>();
 	
-	boolean exibirMenu = true;
+	static boolean exibirMenu = true;
 	
-	public void executarMenu() {
+	public static String executarMenu() {
 		
 		while(exibirMenu) {
 		    
@@ -42,12 +42,14 @@ public class Menu {
 		        default:
 		        	System.out.println("Opção invalida");
 		        	break;
+		        	
 		        		
 		    }
 		}
+		return null;
 	}
 	
-	public void cadastrarPessoa() {
+	public static void cadastrarPessoa() {
 		
 		System.out.println("Qual o tipo de pessoa? \n[1]FISICA: \n[2]JURIDICA:");
 		int tipoPessoa = scan.nextInt();
@@ -58,9 +60,10 @@ public class Menu {
 		else {
 		listaPessoaJuridica.add(LeitorDeDados.criarPessoaJuridica());
 		}
+		 
 	}
 	
-	public void listarPessoa() {
+	public static void listarPessoa() {
 			
 		System.out.println("Qual o tipo de pessoa deseja consultar? \n[1]FISICA: \n[2]JURIDICA:");
 		int tipoPessoa = scan.nextInt();

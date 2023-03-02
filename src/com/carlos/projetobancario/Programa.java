@@ -4,9 +4,7 @@ public class Programa {
 
     public static void main(String[] args) {
     	
-    	Menu menu = new Menu();
-        
-    	menu.executarMenu();
+        Menu.executarMenu();
 
     }
 }
