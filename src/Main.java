@@ -1,9 +1,7 @@
-package com.carlos.projetobancario;
-
-public class Programa {	
+public class Main {
 
     public static void main(String[] args) {
-    	
+
         Menu.executarMenu();
 
     }
