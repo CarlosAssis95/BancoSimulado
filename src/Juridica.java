@@ -1,10 +1,12 @@
 import java.util.Scanner;
+
 public class Juridica extends Pessoa {
 
     Scanner scan = new Scanner(System.in);
     private String dataDeAbertura;
 
-    public Juridica() {}
+    public Juridica() {
+    }
 
     public Juridica(String nome, String documentoDeIdentificacao, String dataDeAbertura, String endereco) {
         super(nome, documentoDeIdentificacao, endereco);
@@ -33,7 +35,7 @@ public class Juridica extends Pessoa {
         System.out.println("Digite o endereço: ");
         String endereco = scan.nextLine();
 
-        return new Juridica(nome ,documentoDeIdentificacao, dataDeAbertura, endereco);
+        return new Juridica(nome, documentoDeIdentificacao, dataDeAbertura, endereco);
     }
 
     @Override

@@ -1,11 +1,13 @@
 import java.util.Scanner;
+
 public class Operacoes extends Conta {
 
     private double deposito;
     private double saque;
     private double saldo;
 
-    public Operacoes() {}
+    public Operacoes() {
+    }
 
     public Operacoes(double deposito) {
         this.deposito = deposito;
@@ -35,7 +37,7 @@ public class Operacoes extends Conta {
         this.saldo = saldo;
     }
 
-    public void efetuarDeposito(){
+    public void efetuarDeposito() {
 
         System.out.println("Qual valor gostaria de depositar? ");
         Scanner scan = new Scanner(System.in);
@@ -45,7 +47,7 @@ public class Operacoes extends Conta {
         System.out.println("O valor depositado foi de R$ " + deposito + " Reais");
     }
 
-    public void exibirSaldo(){
+    public void exibirSaldo() {
         System.out.println("O saldo na conta é de " + saldo + " reais");
     }
 }

@@ -1,10 +1,12 @@
 import java.util.Scanner;
+
 public class Fisica extends Pessoa {
 
     Scanner scan = new Scanner(System.in);
     private String dataDeNascimento;
 
-    public Fisica() {}
+    public Fisica() {
+    }
 
     public Fisica(String nome, String documentoDeIdentificacao, String dataDeNascimento, String endereco) {
         super(nome, documentoDeIdentificacao, endereco);
