@@ -16,12 +16,9 @@ public class Cliente {
         int tipoPessoa = scan.nextInt();
 
         if (tipoPessoa == 1) {
-            Fisica fisica = new Fisica();
-            listaPessoaFisica.add(fisica.criarPessoaFisica());
-
+            listaPessoaFisica.add(Fisica.criarPessoaFisica());
         } else {
-            Juridica juridica = new Juridica();
-            listaPessoaJuridica.add(juridica.criarPessoaJuridica());
+            listaPessoaJuridica.add(Juridica.criarPessoaJuridica());
         }
         conta.criarConta();
     }

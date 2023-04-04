@@ -1,12 +1,9 @@
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Fisica extends Pessoa {
 
-    Scanner scan = new Scanner(System.in);
     private String dataDeNascimento;
-
-    public Fisica() {
-    }
 
     public Fisica(String nome, String documentoDeIdentificacao, String dataDeNascimento, String endereco) {
         super(nome, documentoDeIdentificacao, endereco);
@@ -17,28 +14,25 @@ public class Fisica extends Pessoa {
         return dataDeNascimento;
     }
 
-    public void setDataDeNascimento(String dataDeNascimento) {
-        this.dataDeNascimento = dataDeNascimento;
-    }
+    public static Fisica criarPessoaFisica() {
 
-    public Fisica criarPessoaFisica() {
+        Scanner scan = new Scanner(System.in);
 
-        System.out.println("Digite o nome do titular: ");
+        Impressora.solicitarNome();
         String nome = scan.nextLine();
 
-        System.out.println("Digite o numero do CPF: ");
+        Impressora.solicitarDocumentoIdentificacao();
         String documentoDeIdentificacao = scan.nextLine();
 
-        System.out.println("Digite a data de nascimento: ");
+        Impressora.solicitarDataDeNascimento();
         String dataDeNascimento = scan.nextLine();
 
-        System.out.println("Digite o endereço: ");
+        Impressora.solicitarEndereco();
         String endereco = scan.nextLine();
 
         return new Fisica(nome, documentoDeIdentificacao, dataDeNascimento, endereco);
     }
 
-    @Override
     public String toString() {
 
         return "Nome: " + getNome() + "\nEndereco: " + getEndereco() + "\nDocumento de Identificacao: " + getDocumentoDeIdentificacao() + "\nData de nascimento: " + getDataDeNascimento();

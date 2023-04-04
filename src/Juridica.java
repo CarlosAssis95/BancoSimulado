@@ -1,12 +1,8 @@
 import java.util.Scanner;
 
-public class Juridica extends Pessoa {
+public class Juridica extends Pessoa{
 
-    Scanner scan = new Scanner(System.in);
     private String dataDeAbertura;
-
-    public Juridica() {
-    }
 
     public Juridica(String nome, String documentoDeIdentificacao, String dataDeAbertura, String endereco) {
         super(nome, documentoDeIdentificacao, endereco);
@@ -17,22 +13,20 @@ public class Juridica extends Pessoa {
         return dataDeAbertura;
     }
 
-    public void setDataDeAbertura(String dataDeAbertura) {
-        this.dataDeAbertura = dataDeAbertura;
-    }
+    public static Juridica criarPessoaJuridica() {
 
-    public Juridica criarPessoaJuridica() {
+        Scanner scan = new Scanner(System.in);
 
-        System.out.println("Digite o nome do titular: ");
+        Impressora.solicitarNome();
         String nome = scan.nextLine();
 
-        System.out.println("Digite o numero do CNPJ: ");
+        Impressora.solicitarDocumentoIdentificacao();
         String documentoDeIdentificacao = scan.nextLine();
 
-        System.out.println("Digite a data de abertura da empresa: ");
+        Impressora.solicitarDataDeAbertura();
         String dataDeAbertura = scan.nextLine();
 
-        System.out.println("Digite o endereço: ");
+        Impressora.solicitarEndereco();
         String endereco = scan.nextLine();
 
         return new Juridica(nome, documentoDeIdentificacao, dataDeAbertura, endereco);
