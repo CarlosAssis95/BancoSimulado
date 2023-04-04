@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class Operacoes extends Conta {
 
     private double deposito = 0;
-
     //private double saque;
     private double saldo = 0;
 

@@ -20,10 +20,24 @@ public class Impressora {
         System.out.println("Digite o endereço: ");
     }
 
-    public static void solicitarValorDeposito(){
+    public static void solicitarValorDeposito() {
         System.out.println("Qual valor gostaria de depositar? ");
     }
 
+    public static void solicitarTipoPessoa() {
+        System.out.println("Qual o tipo do pessoa? \n[1]FISICA: \n[2]JURIDICA:");
+    }
 
+    public static void digitarNumeroConta() {
+        System.out.println("Digite o numero de conta com 4 numeros e 1 digito ");
+    }
+
+    public static void digitarNumeroAgencia() {
+        System.out.println("Digite o numero da Agencia com 3 numeros ");
+    }
+
+    public static void escolherTipoConta() {
+        System.out.println("Escolha o tipo de conta [Poupança ou Corrente] ");
+    }
 }
 

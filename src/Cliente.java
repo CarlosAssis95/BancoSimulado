@@ -12,7 +12,7 @@ public class Cliente {
 
     public void cadastrarCliente() {
 
-        System.out.println("Qual o tipo de pessoa? \n[1]FISICA: \n[2]JURIDICA:");
+        Impressora.solicitarTipoPessoa();
         int tipoPessoa = scan.nextInt();
 
         if (tipoPessoa == 1) {
@@ -25,7 +25,7 @@ public class Cliente {
 
     public void listarCliente() {
 
-        System.out.println("Qual o tipo de cliente deseja consultar? \n[1]FISICA: \n[2]JURIDICA:");
+        Impressora.solicitarTipoPessoa();
         int tipoPessoa = scan.nextInt();
 
         if (tipoPessoa == 1) {
