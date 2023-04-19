@@ -2,11 +2,15 @@ import java.util.Objects;
 import java.util.Scanner;
 
 public class Fisica extends Pessoa {
-
     private String dataDeNascimento;
 
-    public Fisica(String nome, String documentoDeIdentificacao, String dataDeNascimento, String endereco) {
-        super(nome, documentoDeIdentificacao, endereco);
+    public Fisica(String nome, String cpf, String dataDeNascimento, String endereco) {
+        super(nome, cpf, endereco);
+
+        if (!ValidarCPF.validarCPF(cpf)) {
+            throw new IllegalArgumentException("CPF inválido.");
+        }
+
         this.dataDeNascimento = dataDeNascimento;
     }
 
@@ -15,28 +19,38 @@ public class Fisica extends Pessoa {
     }
 
     public static Fisica criarPessoaFisica() {
-
         Scanner scan = new Scanner(System.in);
+        String nome, cpf, dataDeNascimento, endereco;
+        boolean cpfValido = false;
 
-        Impressora.solicitarNome();
-        String nome = scan.nextLine();
+        do {
+            Impressora.solicitarNome();
+            nome = scan.nextLine();
 
-        Impressora.solicitarDocumentoIdentificacao();
-        String documentoDeIdentificacao = scan.nextLine();
+            Impressora.solicitarDocumentoIdentificacao();
+            cpf = scan.nextLine();
 
-        Impressora.solicitarDataDeNascimento();
-        String dataDeNascimento = scan.nextLine();
+            Impressora.solicitarDataDeNascimento();
+            dataDeNascimento = scan.nextLine();
 
-        Impressora.solicitarEndereco();
-        String endereco = scan.nextLine();
+            Impressora.solicitarEndereco();
+            endereco = scan.nextLine();
 
-        return new Fisica(nome, documentoDeIdentificacao, dataDeNascimento, endereco);
+            try {
+                Fisica pessoaFisica = new Fisica(nome, cpf, dataDeNascimento, endereco);
+                cpfValido = true;
+                return pessoaFisica;
+
+            } catch (IllegalArgumentException e) {
+                Impressora.cpfInvalido();
+            }
+
+        } while (!cpfValido);
+
+        return null;
     }
 
     public String toString() {
-
         return "Nome: " + getNome() + "\nEndereco: " + getEndereco() + "\nDocumento de Identificacao: " + getDocumentoDeIdentificacao() + "\nData de nascimento: " + getDataDeNascimento();
-
     }
-
 }

@@ -21,7 +21,7 @@ public class Juridica extends Pessoa{
         String nome = scan.nextLine();
 
         Impressora.solicitarDocumentoIdentificacao();
-        String documentoDeIdentificacao = scan.nextLine();
+        String cnpj = scan.nextLine();
 
         Impressora.solicitarDataDeAbertura();
         String dataDeAbertura = scan.nextLine();
@@ -29,7 +29,7 @@ public class Juridica extends Pessoa{
         Impressora.solicitarEndereco();
         String endereco = scan.nextLine();
 
-        return new Juridica(nome, documentoDeIdentificacao, dataDeAbertura, endereco);
+        return new Juridica(nome, cnpj, dataDeAbertura, endereco);
     }
 
     @Override

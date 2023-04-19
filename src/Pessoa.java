@@ -3,7 +3,6 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Pessoa {
-
     private String endereco;
     private String nome;
     private String documentoDeIdentificacao;
@@ -17,6 +16,7 @@ public class Pessoa {
         this.nome = nome;
         this.documentoDeIdentificacao = documentoDeIdentificacao;
     }
+
 
     public String getEndereco() {
         return endereco;

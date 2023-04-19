@@ -3,28 +3,29 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Menu {
-
-    static final String OPCOES = "[1]CADASTRAR CLIENTE \n[2]LISTAR CLIENTES \n[3]EFETUAR DEPOSITO \n[4]EXIBIR SALDO \n[5]EXIT";
     static Scanner scan = new Scanner(System.in);
     static Operacoes operacoes = new Operacoes();
     static Cliente cliente = new Cliente();
+    static Conta conta = new Conta();
     static boolean exibirMenu = true;
 
     public static void executarMenu() {
 
         while (exibirMenu) {
 
-            System.out.println(OPCOES);
+            Impressora.opcoesMenu();
             int option = scan.nextInt();
 
             switch (option) {
 
                 case 1:
                     cliente.cadastrarCliente();
+                    conta.criarConta();
                     break;
 
                 case 2:
                     cliente.listarCliente();
+                    conta.toString();
                     break;
 
                 case 3:
@@ -36,13 +37,16 @@ public class Menu {
                     break;
 
                 case 5:
+                    operacoes.efetuarSaque();
+                    break;
+
+                case 6:
                     exibirMenu = false;
-                    System.out.println("Obrigado por visitar nosso banco");
-                    System.out.println("Nos vemos na proxima");
+                    Impressora.despedidaMenu();
                     break;
 
                 default:
-                    System.out.println("Opção invalida");
+                    Impressora.opcaoInvalida();
                     break;
 
             }
