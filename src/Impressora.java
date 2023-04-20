@@ -5,7 +5,7 @@ public class Impressora {
     }
 
     public static void solicitarDocumentoIdentificacao() {
-        System.out.println("Digite o numero do Documento: ");
+        System.out.println("Digite o numero do Documento sem pontos e traços: ");
     }
 
     public static void solicitarDataDeAbertura() {
@@ -41,7 +41,8 @@ public class Impressora {
     }
 
     public static void opcoesMenu(){
-        System.out.println("[1]CADASTRAR CLIENTE \n[2]LISTAR CLIENTES \n[3]EFETUAR DEPOSITO \n[4]EXIBIR SALDO \n[5]EFETUAR SAQUE  \n[6]SAIR");
+        System.out.println("[1]CADASTRAR CLIENTES \n[2]LISTAR CLIENTES \n[3]EFETUAR DEPOSITO \n[4]EXIBIR SALDO \n[5]EFETUAR SAQUE  \n[6]DAR BAIXA EM CLIENTES " +
+                "\n[7]SAIR");
     }
 
     public static void despedidaMenu(){
@@ -53,12 +54,18 @@ public class Impressora {
         System.out.println("Opção invalida");
     }
 
-    public static void cpfInvalido(){ System.out.println("CPF inválido. Digite novamente.");}
+    public static void cpfInvalido(){ System.out.println("CPF inválido. Digite novamente sem pontos e traços.");}
+
+    public static void cnpjInvalido(){ System.out.println("CNPJ inválido. Digite novamente sem pontos e traços.");}
 
     public static void pedirValorSaque(){ System.out.println("Qual valor deseja sacar ?");}
 
     public static void saqueEfetuado(){ System.out.println("Saque efetuado com sucesso");}
     public static void semLimite(){ System.out.println("Sem limite disponivel para saque \nTente outro valor");}
+
+    public static void excluirCliente(){System.out.println("Qual o CPF do cliente que deseja excluir? ");}
+
+    public static void clienteExcluido(){ System.out.println("Cliente excluido ");}
 
 }
 

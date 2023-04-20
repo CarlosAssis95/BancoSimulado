@@ -26,4 +26,18 @@ public class Cliente {
     public void listarCliente(){
         System.out.println(clientes.toString());
     }
+
+    public void excluirCliente(){
+
+        Impressora.excluirCliente();
+        String cpfExcluido = scan.next();
+
+        for (int i = 0; i < clientes.size(); ++i ){
+            if (clientes.get(i).getDocumentoDeIdentificacao().equals(cpfExcluido)){
+                clientes.remove(i);
+                Impressora.clienteExcluido();
+            }
+        }
+
+    }
 }

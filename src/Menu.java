@@ -41,6 +41,10 @@ public class Menu {
                     break;
 
                 case 6:
+                    cliente.excluirCliente();
+                    break;
+
+                case 7:
                     exibirMenu = false;
                     Impressora.despedidaMenu();
                     break;

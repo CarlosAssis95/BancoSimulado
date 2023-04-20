@@ -6,20 +6,23 @@ public class Fisica extends Pessoa {
 
     public Fisica(String nome, String cpf, String dataDeNascimento, String endereco) {
         super(nome, cpf, endereco);
+        this.dataDeNascimento = dataDeNascimento;
 
         if (!ValidarCPF.validarCPF(cpf)) {
             throw new IllegalArgumentException("CPF inválido.");
         }
-
-        this.dataDeNascimento = dataDeNascimento;
     }
+
+
 
     public String getDataDeNascimento() {
         return dataDeNascimento;
     }
 
     public static Fisica criarPessoaFisica() {
+
         Scanner scan = new Scanner(System.in);
+
         String nome, cpf, dataDeNascimento, endereco;
         boolean cpfValido = false;
 
