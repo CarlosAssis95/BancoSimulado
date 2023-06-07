@@ -1,22 +1,23 @@
-import java.util.Objects;
 import java.util.Scanner;
 
 public class Fisica extends Pessoa {
     private String dataDeNascimento;
 
-    public Fisica(String nome, String cpf, String dataDeNascimento, String endereco) {
-        super(nome, cpf, endereco);
+    public void setDataDeNascimento(String dataDeNascimento) {
+        this.dataDeNascimento = dataDeNascimento;
+    }
+
+    public String getDataDeNascimento() {
+        return dataDeNascimento;
+    }
+
+    public Fisica(String nome, String cpf, String dataDeNascimento, String endereco, int id) {
+        super(nome, cpf, endereco, id);
         this.dataDeNascimento = dataDeNascimento;
 
         if (!ValidarCPF.validarCPF(cpf)) {
             throw new IllegalArgumentException("CPF inválido.");
         }
-    }
-
-
-
-    public String getDataDeNascimento() {
-        return dataDeNascimento;
     }
 
     public static Fisica criarPessoaFisica() {
@@ -25,6 +26,7 @@ public class Fisica extends Pessoa {
 
         String nome, cpf, dataDeNascimento, endereco;
         boolean cpfValido = false;
+        Cliente cliente = new Cliente();
 
         do {
             Impressora.solicitarNome();
@@ -39,8 +41,9 @@ public class Fisica extends Pessoa {
             Impressora.solicitarEndereco();
             endereco = scan.nextLine();
 
+
             try {
-                Fisica pessoaFisica = new Fisica(nome, cpf, dataDeNascimento, endereco);
+                Fisica pessoaFisica = new Fisica(nome, cpf, dataDeNascimento, endereco, cliente.criarId(Cliente.clientes));
                 cpfValido = true;
                 return pessoaFisica;
 
@@ -54,6 +57,7 @@ public class Fisica extends Pessoa {
     }
 
     public String toString() {
-        return "Nome: " + getNome() + "\nEndereco: " + getEndereco() + "\nDocumento de Identificacao: " + getDocumentoDeIdentificacao() + "\nData de nascimento: " + getDataDeNascimento();
+        return "Nome: " + getNome() + "\nEndereco: " + getEndereco() + "\nDocumento de Identificacao: " + getDocumentoDeIdentificacao() +
+                "\nData de nascimento: " + getDataDeNascimento();
     }
 }

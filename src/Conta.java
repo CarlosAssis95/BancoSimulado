@@ -3,14 +3,21 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Conta {
-
-    Scanner scan = new Scanner(System.in);
-    static List<Conta> contas = new ArrayList<>();
-
-    Conta conta;
+    public static List<Conta> contas = new ArrayList<>();
+    
     String numeroConta;
     String agencia;
     String tipoDeConta;
+
+    int idCliente;
+
+    public Conta (){}
+
+    public Conta(String numeroConta, String agencia, String tipoDeConta) {
+        this.numeroConta = numeroConta;
+        this.agencia = agencia;
+        this.tipoDeConta = tipoDeConta;
+    }
 
     public String getNumeroConta() {
         return numeroConta;
@@ -24,19 +31,26 @@ public class Conta {
         return tipoDeConta;
     }
 
-    public void criarConta() {
+    public int getIdCliente(){ return idCliente; }
+
+
+    public static Conta criarConta() {
+
+        Scanner scan = new Scanner(System.in);
 
         Impressora.digitarNumeroConta();
-        numeroConta = scan.nextLine();
+        String numeroConta = scan.nextLine();
 
         Impressora.digitarNumeroAgencia();
-        agencia = scan.nextLine();
+        String agencia = scan.nextLine();
 
         Impressora.escolherTipoConta();
-        tipoDeConta = scan.nextLine();
+        String tipoDeConta = scan.nextLine();
 
-        Conta Conta;
+
+        Conta conta = new Conta(numeroConta, agencia, tipoDeConta);
         contas.add(conta);
+        return conta;
 
     }
 
@@ -47,4 +61,17 @@ public class Conta {
 
     }
 
+    public void mostrarConta() {
+
+        System.out.println("Qual o numero da conta que deseja visualizar ");
+        Scanner scan = new Scanner(System.in);
+        String numeroConta = scan.next();
+
+        for (int i = 0; i < contas.size(); ++i) {
+            if (contas.get(i).getNumeroConta().equals(numeroConta))
+                System.out.println("A conta é " + contas.get(i).getNumeroConta() + " Agencia : " + contas.get(i).getAgencia()
+                        + " id: " + contas.get(i).getIdCliente());
+        }
+
+    }
 }

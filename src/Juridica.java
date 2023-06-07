@@ -1,14 +1,14 @@
 import java.util.Scanner;
 
-public class Juridica extends Pessoa{
+public class Juridica extends Pessoa {
 
     private String dataDeAbertura;
 
-    public Juridica(String nome, String cnpj, String dataDeAbertura, String endereco) {
-        super(nome, cnpj, endereco);
+    public Juridica(String nome, String cnpj, String dataDeAbertura, String endereco, int id) {
+        super(nome, cnpj, endereco, id);
         this.dataDeAbertura = dataDeAbertura;
 
-        if (!ValidarCNPJ.validaCNPJ(cnpj)){
+        if (!ValidarCNPJ.validaCNPJ(cnpj)) {
             throw new IllegalArgumentException("CNPJ Invalido");
         }
     }
@@ -24,6 +24,9 @@ public class Juridica extends Pessoa{
         String nome, cnpj, dataDeAbertura, endereco;
         boolean cnpjValido = false;
 
+        Cliente cliente = new Cliente();
+        boolean cpfValido = false;
+
         do {
             Impressora.solicitarNome();
             nome = scan.nextLine();
@@ -38,7 +41,7 @@ public class Juridica extends Pessoa{
             endereco = scan.nextLine();
 
             try {
-                Juridica pessoaJuridica = new Juridica(nome, cnpj, dataDeAbertura, endereco);
+                Juridica pessoaJuridica = new Juridica(nome, cnpj, dataDeAbertura, endereco, cliente.criarId(Cliente.clientes));
                 cnpjValido = true;
                 return pessoaJuridica;
 
@@ -51,10 +54,14 @@ public class Juridica extends Pessoa{
 
         return null;
     }
+
     @Override
     public String toString() {
 
-        return "Nome: " + getNome() + "\nEndereco: " + getEndereco() + "\nDocumento de Identificacao: " + getDocumentoDeIdentificacao() + "\nData de abertura: " + getDataDeAbertura();
+        return "Nome: " + getNome() + "\nEndereco: " + getEndereco() + "\nDocumento de Identificacao: " +
+                getDocumentoDeIdentificacao() + "\nData de abertura: " + getDataDeAbertura();
 
     }
+
+
 }

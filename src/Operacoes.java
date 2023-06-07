@@ -3,36 +3,81 @@ import java.util.Scanner;
 public class Operacoes extends Conta {
 
     Scanner scan = new Scanner(System.in);
-    private double deposito = 0;
-    //private double saque;
-    private double saldo = 0;
-
+    private double deposito;
+    private double saldo;
     private double saque;
+    private double transferencia;
 
-    public Operacoes() {
+    public Operacoes(){
+        this.deposito = 0;
+        this.saldo = 0;
+    }
+
+    public void setDeposito(double deposito) {
+        this.deposito = deposito;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
+
+    public double getSaque() {
+        return saque;
+    }
+
+    public void setSaque(double saque) {
+        this.saque = saque;
+    }
+
+    public double getTransferencia() {
+        return transferencia;
+    }
+
+    public void setTransferencia(double transferencia) {
+        this.transferencia = transferencia;
     }
 
     public void efetuarDeposito() {
 
         Impressora.solicitarValorDeposito();
-        deposito = scan.nextDouble();
-        saldo += deposito;
+        this.setDeposito(scan.nextDouble());
+        this.setSaldo(this.saldo += this.deposito);
     }
 
-    public void efetuarSaque(){
+    public void efetuarSaque() {
         Impressora.pedirValorSaque();
-        saque = scan.nextDouble();
+        this.setSaque(scan.nextDouble());
 
-        if ( saque < saldo ){
+        if (this.getSaque() < this.getSaldo()) {
             Impressora.saqueEfetuado();
-            saldo -= saque;
+            this.setSaldo(this.saldo -= this.saque);
         } else {
             Impressora.semLimite();
         }
 
     }
 
+    public void efetuarTransferencia(){
+
+        System.out.println("Qual valor deseja transferir? ");
+        this.setTransferencia(scan.nextDouble());
+
+        if (this.getTransferencia() < getSaldo()){
+            System.out.println("O Saldo está disponivel para transferir ");
+            this.setSaldo(this.saldo -= this.transferencia);
+        } else {
+            System.out.println("Você não tem saldo suficiente ");
+        }
+
+        // System.out.println("Para quem deseja transferir ? ");
+
+    }
+
     public void exibirSaldo() {
-        System.out.println("O saldo na conta é de " + saldo + " reais");
+        System.out.println("O saldo na conta é de " + this.getSaldo() + " reais");
     }
 }

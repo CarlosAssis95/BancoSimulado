@@ -1,6 +1,5 @@
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
+
 
 public class Menu {
     static Scanner scan = new Scanner(System.in);
@@ -45,6 +44,19 @@ public class Menu {
                     break;
 
                 case 7:
+                    cliente.mostrarCliente();
+                    break;
+
+
+                case 8:
+                    conta.mostrarConta();
+                    break;
+
+                case 9:
+                    operacoes.efetuarTransferencia();
+                    break;
+
+                case 10:
                     exibirMenu = false;
                     Impressora.despedidaMenu();
                     break;
