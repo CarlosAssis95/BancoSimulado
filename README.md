@@ -1,6 +1,6 @@
 # BancoSimulado
 
-Bem-vindo ao BancoSimulado! Este é um projeto de backend desenvolvido em Java que simula o funcionamento básico de um banco. Ele oferece funcionalidades essenciais como criação de contas, depósitos, saques e consultas de saldo.
+Bem-vindo ao BancoSimulado! Este é um projeto de backend desenvolvido em Java que simula o funcionamento básico de um banco para fins de estudo. Ele oferece funcionalidades essenciais como criação de contas, depósitos, saques e consultas de saldo.
 
 ## Descrição
 
