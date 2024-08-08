@@ -8,11 +8,11 @@ O BancoSimulado é uma aplicação backend projetada para representar as operaç
 
 ## Funcionalidades
 
-Criação de Conta: Permite criar novas contas bancárias com um identificador único e um saldo inicial.
-Depósito: Permite adicionar dinheiro à conta.
-Saque: Permite retirar dinheiro da conta, desde que haja saldo suficiente.
-Consulta de Saldo: Permite verificar o saldo atual da conta.
-Transferência entre Contas: Permite transferir fundos de uma conta para outra.
+- Criação de Conta: Permite criar novas contas bancárias com um identificador único e um saldo inicial.
+- Depósito: Permite adicionar dinheiro à conta.
+- Saque: Permite retirar dinheiro da conta, desde que haja saldo suficiente.
+- Consulta de Saldo: Permite verificar o saldo atual da conta.
+- Transferência entre Contas: Permite transferir fundos de uma conta para outra.
 
 ## Tecnologias Utilizadas
 
